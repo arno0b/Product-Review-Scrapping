@@ -5,9 +5,10 @@ from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 import csv
 
-app = Flask(__name__)  # create a Flask instance
-
+application = Flask(__name__)  # create a Flask instance
+app = application
 @app.route('/',methods=['GET'])  # create a route for the home page
+@cross_origin()
 def homePage():
     return render_template("index.html")  # return the index.html template for the home page
 
